@@ -102,3 +102,85 @@ nav > a {
   background-color: orange;
   margin-bottom: 16px;
 }
+
+.service-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-detail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 128px;
+  margin-top: 72px;
+}
+
+.service-detail-item {
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-detail-item img {
+  width: 100%;
+}
+
+.service-detail-item h2 {
+  padding: 0 16px;
+}
+
+.service-detail-item p {
+  font-size: 16px;
+  padding: 0 16px;
+}
+
+.contact-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 72px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  margin-top: 32px;
+  grid-template-areas: "name subject" "email phone" "message message";
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+#input-name {
+  grid-area: name;
+}
+
+#input-subject {
+  grid-area: subject;
+}
+
+#input-email {
+  grid-area: email;
+}
+
+#input-message {
+  grid-area: message;
+}
+#input-message {
+  grid-area: message;
+}
+
+.input-group label {
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+}
