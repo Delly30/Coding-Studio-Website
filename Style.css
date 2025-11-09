@@ -18,7 +18,20 @@ a {
   background-color: orange;
   color: white;
   padding: 8px 24px;
+  /* border: none; */
 }
+
+/* #dummy {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: relative;
+  left: 500px;
+}
+
+#dummy img {
+
+} */
 
 .btn-alt {
   background-color: white;
@@ -28,11 +41,51 @@ a {
   border-color: orange;
 }
 
+/* #header h1 {
+  animation: bouncing 2s infinite;
+} */
+
 #header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 128px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  /* animation: flash 3s infinite; */
+}
+
+@keyframes bouncing {
+  0% {
+    filter: opacity(0);
+    transform: translateY(-20px);
+  }
+
+  35% {
+    filter: opacity(0.25);
+    transform: translateY(0);
+  }
+
+  70% {
+    filter: opacity(0.5);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    filter: opacity(1);
+    transform: translateY(0);
+  }
+}
+
+@keyframes flash {
+  from {
+    filter: opacity(0);
+  }
+
+  to {
+    filter: opacity(1);
+  }
 }
 
 #header h1 {
@@ -73,6 +126,10 @@ nav > a {
   margin-left: 12px;
 }
 
+nav > a:hover {
+  color: orange;
+}
+
 #about {
   display: flex;
   align-items: center;
@@ -109,6 +166,21 @@ nav > a {
   justify-content: space-between;
 }
 
+.service-header h1 {
+  position: relative;
+}
+
+.service-header h1::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: url("images/accent2.svg");
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  z-index: -1;
+}
+
 .service-detail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -120,8 +192,16 @@ nav > a {
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
+.service-detail-item:hover {
+  transform: scale(1.05);
+}
+
 .service-detail-item img {
   width: 100%;
+}
+
+.service-detail-item img:hover {
+  filter: grayscale(1);
 }
 
 .service-detail-item h2 {
@@ -137,6 +217,43 @@ nav > a {
   display: flex;
   justify-content: space-between;
   margin-top: 72px;
+  column-gap: 128px;
+}
+
+#contact h1 {
+  position: relative;
+}
+
+#contact > h1::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: url("images/accent1.svg");
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  z-index: -1;
+}
+
+form h1 {
+  font-size: 32px;
+  text-align: center;
+}
+
+form button {
+  border: none;
+}
+
+form button:hover {
+  background-color: darkorange;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid orange;
+  padding: 64px 24px;
 }
 
 .form-group {
@@ -153,6 +270,10 @@ nav > a {
   margin-bottom: 32px;
 }
 
+.input-group input:focus {
+  border-bottom: 2px solid orange;
+}
+
 #input-name {
   grid-area: name;
 }
@@ -165,8 +286,8 @@ nav > a {
   grid-area: email;
 }
 
-#input-message {
-  grid-area: message;
+#input-phone {
+  grid-area: phone;
 }
 #input-message {
   grid-area: message;
@@ -183,4 +304,66 @@ nav > a {
   outline: none;
   border-bottom: 1px solid black;
   font-size: 20px;
+}
+
+footer {
+  padding: 16px 128px;
+  color: white;
+  background-color: orange;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  width: 50%;
+  color: white;
+}
+
+.social-media {
+  display: flex;
+  gap: 32px;
+}
+
+@media only screen and (max-width: 992px) {
+  #header,
+  #footer {
+    padding: 16px 32px;
+  }
+
+  section {
+    padding: 64px 32px;
+  }
+
+  #landing {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #landing > div {
+    width: 100%;
+  }
+
+  #about {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #about > div {
+    width: 100%;
+  }
+
+  .service-detail {
+    gap: 16px;
+  }
+
+  .contact-detail {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 64px;
+  }
 }
